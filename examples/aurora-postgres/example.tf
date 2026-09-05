@@ -12,7 +12,7 @@ locals {
 
 module "vpc" {
   source      = "cypik/vpc/aws"
-  version     = "1.0.1"
+  version     = "1.0.5"
   name        = "vpc"
   environment = "test"
   label_order = ["environment", "name"]
@@ -22,7 +22,7 @@ module "vpc" {
 
 module "subnets" {
   source      = "cypik/subnet/aws"
-  version     = "1.0.1"
+  version     = "1.0.7"
   name        = "subnets"
   environment = "test"
   label_order = ["name", "environment"]
@@ -30,7 +30,7 @@ module "subnets" {
   nat_gateway_enabled = true
 
   availability_zones = ["eu-west-1a", "eu-west-1b"]
-  vpc_id             = module.vpc.id
+  vpc_id             = module.vpc.vpc_id
   type               = "public"
   igw_id             = module.vpc.igw_id
   cidr_block         = module.vpc.vpc_cidr_block
@@ -56,7 +56,7 @@ module "aurora-postgresql" {
   allowed_ports   = [5432]
   allowed_ip      = ["0.0.0.0/0"]
   subnets         = module.subnets.public_subnet_id
-  vpc_id          = module.vpc.id
+  vpc_id          = module.vpc.vpc_id
   instances = {
     1 = {
       instance_class      = "db.t4g.medium"

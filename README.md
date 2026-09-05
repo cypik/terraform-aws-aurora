@@ -23,7 +23,7 @@ To use this module, you can include it in your Terraform configuration. Here's a
 ```hcl
 module "aurora-mysql" {
   source          = "cypik/aurora/aws"
-  version         = "1.0.0"
+  version         = "1.0.1"
   name            = local.name
   environment     = local.environment
   engine          = "aurora-mysql"
@@ -137,7 +137,7 @@ module "aurora-mysql" {
 ```hcl
 module "aurora_mysql" {
   source          = "cypik/aurora/aws"
-  version         = "1.0.0"
+  version         = "1.0.1"
   name            = local.name
   environment     = local.environment
   engine          = "aurora-mysql"
@@ -175,7 +175,7 @@ module "aurora_mysql" {
 ```hcl
 module "aurora-postgresql" {
   source      = "cypik/aurora/aws"
-  version     = "1.0.0"
+  version     = "1.0.1"
   name        = local.name
   environment = local.environment
   label_order = local.label_order
@@ -260,7 +260,7 @@ module "aurora-postgresql" {
 ```hcl
 module "aurora_postgresql" {
   source          = "cypik/aurora/aws"
-  version         = "1.0.0"
+  version         = "1.0.1"
   name            = local.name
   environment     = local.environment
   engine          = "aurora-postgresql"
@@ -307,22 +307,22 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6.6 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.31.0 |
-| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.5.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.15.8 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.58.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.9.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.31.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | >= 3.5.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.58.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | >= 3.9.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/aws | 1.0.1 |
+| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/aws | 1.0.4 |
 
 ## Resources
 
